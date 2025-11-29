@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,70 +10,117 @@
             padding: 0;
             font-family: Arial, sans-serif;
             height: 100%;
+            background: #000;
         }
 
+        /* Background image with darker overlay */
         .container {
             position: relative;
             width: 100%;
-            height: 100vh;
-            background: url('images/foods.png') no-repeat center center;
-            background-size: cover;
+            min-height: 100vh;
+            background: url('images/foods.png') center/cover no-repeat;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Dark transparent overlay for readability */
+        .overlay {
+            background: rgba(0, 0, 0, 0.55);
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .text-box {
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-            padding: 20px;
-            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 22px;
+            border-radius: 18px;
             text-align: left;
-            max-width: 350px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 380px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            animation: fadeIn 0.5s ease-in-out;
         }
 
         .text-box p {
-            font-size: 16px;
-            line-height: 1.8;
+            font-size: 15px;
+            line-height: 1.7;
             color: #333;
+            margin-bottom: 14px;
         }
 
-        .text-box .button {
-            background-color: #0066cc; /* Light pink */
+        /* Clean modern button */
+        .button {
+            width: 100%;
+            background-color: #0066cc;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             color: #fff;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: bold;
-            padding: 10px 20px;
+            padding: 12px;
             text-align: center;
             cursor: pointer;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            margin-left: 90px;
+            margin-top: 10px;
+            transition: 0.25s;
         }
 
         .button:hover {
-            background-color: #472bfb; /* Slightly darker pink */
+            background-color: #1a7ee0;
+            transform: translateY(-2px);
+        }
+
+        /* Smooth fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 480px) {
+            .text-box { padding: 18px; }
+            .text-box p { font-size: 14px; }
+            .button { font-size: 16px; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="text-box">
-            <p>
-                Хугацаат цэргийн албан хаагч нь алба хаах хугацаандаа I-р норм буюу махтай хоолоор 313 хоног байх ба 3 удаагийн 4-н халуун хоолоор хангагдана дундаж илчлэг 3800-с дээш байна. Үүнд:
-                <br><br>
-                I-р хоол 700гр<br>
-                II-р хоол 400гр байх ба хоол бүрт 200гр талхаар хангагдана.<br>
-                Хоолны дундаж хэм +65°-с дээш байна.<br><br>
-                Хугацаат цэргийн албан хаагч нь II-р норм буюу 52 хоног нь цагаан хоолтой өдөр байна. Өдөрт 3 удаагийн 4 халуун хоолоор хангагдана. Үүнээс 1 хоол нь махтай байж болно. Илчлэг нь 2800-с баггүй байна.
-            </p>
-            <p>Хоолны хуваарь<br>
-                Хоолны хуваарьт 7 хонгийн цэс, нэр төрөл, илчлэгийг тодорхойлсон байна
-                Цэргийн алба хаагч нь 7 хоногт дунджаар 17-с дээш нэр төрлийн хоол хооллохоор тусгана.</p>
-            <button class="button" onclick="location.href='menu.html'">Дэлгэрэнгүй</button>
+        <div class="overlay">
+
+            <div class="text-box">
+                <p>
+                    Хугацаат цэргийн албан хаагч нь алба хаах хугацаандаа I-р норм буюу махтай хоолоор
+                    313 хоног хангагдах ба өдөрт 3 удаа, нийт 4 халуун хоолоор хангагдана.
+                    Дундаж илчлэг 3800-с дээш байна.
+                </p>
+
+                <p>
+                    • I-р хоол: 700 гр  
+                    • II-р хоол: 400 гр  
+                    Хоол бүрт 200 гр талхаар хангагдана.  
+                    Хоолны дундаж хэм +65°-с дээш байна.
+                </p>
+
+                <p>
+                    II-р нормтой өдрүүдэд нийт 52 хоног цагаан хоолтой байх ба өдөрт 3 удаагийн 4 халуун
+                    хоол өгнө. Үүнээс 1 хоол нь махтай байж болно. Илчлэг 2800-аас багагүй байна.
+                </p>
+
+                <p>
+                    <b>Хоолны хуваарь:</b><br>
+                    7 хоногийн цэс, нэр төрөл, илчлэгийг тодорхойлсон байх ба цэргийн алба хаагч
+                    нь долоо хоногт дунджаар 17-с дээш нэр төрлийн хоол хэрэглэнэ.
+                </p>
+
+                <button class="button" onclick="location.href='menu.html'">Дэлгэрэнгүй</button>
+            </div>
+
         </div>
     </div>
 

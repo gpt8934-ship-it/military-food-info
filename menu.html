@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Options</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-size: cover;
+      text-align: center;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .container {
+      height: 95vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 250px;
+      gap: 15px;
+      width: 100%;
+      max-width: 400px;
+      background: url('/foods.png') no-repeat center center;
+    }
+    
+    .menu-button {
+      background-color: #0066cc;
+      border: none;
+      border-radius: 24px;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .menu-button:hover {
+      background-color: #7d70e0;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Цэргийн хоол</h1>
+    <button class="menu-button" onclick="location.href='mah.html'">Мах, махан бүтээгдэхүүн</button>
+    <button class="menu-button" onclick="location.href='guril.html'">Гурил, будаа</button>
+    <button class="menu-button" onclick="location.href='nogoo.html'">Төмс, хүнсний ногоо</button>
+    <button class="menu-button" onclick="location.href='tos.html'">Тос</button>
+    <button class="menu-button" onclick="location.href='hool_amtlagch.html'">Хоол амтлагч</button>
+    <button class="menu-button" onclick="location.href='busad.html'">Бусад</button>
+  </div>
+</body>
+</html>

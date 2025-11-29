@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flour and Grain Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0066cc;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .product img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .product .details {
+            flex: 1;
+        }
+
+        .product .details h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #444;
+        }
+
+        .product .details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Гурил, гурилан бүтээгдэхүүн</h1>
+
+        <div class="product">
+            <img src="images/guril.png" alt="1-р гурил">
+            <div class="details">
+                <h2>1-р Гурил: 80гр</h2>
+                <p>Монгол Улсад мөрдөгдөж буй MNS 0244:2009 стандартын шаардлагыг хангасан гурил байна.</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="details">
+                <h2>Бүхэл үрийн гурил: 100гр</h2>
+                <p>Монгол Улсад мөрдөгдөж буй MNS 0244:2009 стандартын шаардлагыг хангасан бүхэл үрийн гурил байна.</p>
+            </div>
+            <img src="images/buhel.png" alt="Бүхэл үрийн гурил">
+        </div>
+
+        <div class="product">
+            <img src="images/talh.png" alt="Талхны гурил">
+            <div class="details">
+                <h2>Талхны Гурил: 500гр</h2>
+                <p>1-р гурил: 200гр<br>2-р гурил: 300гр</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="details">
+                <h2>Цагаан будаа: 50гр</h2>
+                <p>MNS ISO 7301:2000 стандартын шаардлагыг хангасан байна.</p>
+            </div>
+            <img src="images/tsagan.png" alt="Будаа">
+        </div>
+
+        <div class="product">
+            <img src="images/goimon.png" alt="Гоймон">
+            <div class="details">
+                <h2>Гоймон: 40гр</h2>
+                <p>MNS 0142:1985 стандартын шаардлагыг хангасан байна.</p>
+            </div>
+        </div>
+        <div class="product">
+            <div class="details">
+                <h2>Бусад будаа: 40гр</h2>
+                <p>шар будуу:MNS 0533:1998, хөц будаа: MNS 7301:2001 стандартын шаардлагыг хангасан  байна.</p>
+            </div>
+            <img src="images/turulbur.png" alt="Будаа">
+        </div>
+    </div>
+    <script>
+        let startX = 0;
+        let startY = 0;
+    
+        document.addEventListener('touchstart', function(e) {
+          const touch = e.touches[0];
+          startX = touch.screenX;
+          startY = touch.screenY;
+        }, false);
+    
+        document.addEventListener('touchend', function(e) {
+          const touch = e.changedTouches[0];
+          const endX = touch.screenX;
+          const endY = touch.screenY;
+    
+          const diffX = endX - startX;
+          const diffY = endY - startY;
+    
+          if (Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX > 50) { 
+              history.back(); 
+            }
+          }
+        }, false);
+      </script>
+</body>
+</html>

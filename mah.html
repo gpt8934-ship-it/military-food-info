@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Малын мах</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('/foods.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-box {
+            background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .text-box h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .text-box p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .meat-image {
+            width: 150px;
+            height: auto;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="text-box">
+            <h1>Малын мах - 420гр</h1>
+            <p>Монгол Улсад мөрдөгдөж буй MNS ISO 22000:2018 стандартын шаардлагыг хангасан малын мах байна.</p>
+            <img src="images/mah.png" alt="Meat" class="meat-image">
+        </div>
+        <script>
+            let startX = 0;
+            let startY = 0;
+        
+            document.addEventListener('touchstart', function(e) {
+              const touch = e.touches[0];
+              startX = touch.screenX;
+              startY = touch.screenY;
+            }, false);
+        
+            document.addEventListener('touchend', function(e) {
+              const touch = e.changedTouches[0];
+              const endX = touch.screenX;
+              const endY = touch.screenY;
+        
+              const diffX = endX - startX;
+              const diffY = endY - startY;
+        
+              if (Math.abs(diffX) > Math.abs(diffY)) {
+                if (diffX > 50) { 
+                  history.back(); 
+                }
+              }
+            }, false);
+          </script>
+    </div>
+
+</body>
+</html>

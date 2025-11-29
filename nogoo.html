@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хүнсний ногоо</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #006699;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .product img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .product .details {
+            flex: 1;
+        }
+
+        .product .details h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #444;
+        }
+
+        .product .details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Хүнсний ногоо</h1>
+
+        <div class="product">
+            <img src="images/tums.png" alt="Төмс">
+            <div class="details">
+                <h2>Төмс: 350гр</h2>
+                <p>MNS 0258:2006 стандартын шаардлагыг хангасан, шинэ ургацын төмс байна.</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="details">
+                <h2>Манжин: 50гр</h2>
+                <p>MNS 0271:1972 стандартын шаардлагыг хангасан, шинэ ургацын манжин байна.</p>
+            </div>
+            <img src="images/manjin.png" alt="Манжин">
+        </div>
+
+        <div class="product">
+            <img src="images/luuvan.png" alt="Лууван">
+            <div class="details">
+                <h2>Лууван: 100гр</h2>
+                <p>MNS 0255:2007 стандартын шаардлагыг хангасан, шинэ ургацын лууван байна.</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="details">
+                <h2>Байцаа: 200гр</h2>
+                <p>MNS ISO 0268:1973 стандартын шаардлагыг хангасан, шинэ ургацын байцаа байна.</p>
+            </div>
+            <img src="images/Cabbage.png" alt="Байцаа">
+            
+        </div>
+
+        <div class="product">
+            <img src="images/Onion.png" alt="Сонгино">
+            <div class="details">
+                <h2>Сонгино: 80гр</h2>
+                <p>MNS 0260:1982 стандартын шаардлагыг хангасан, шинэ ургацын сонгино байна.</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="details">
+                <h2>Сармис: 5гр</h2>
+                <p>MNS ISO 0267:1973 стандартын шаардлагыг хангасан байна.</p>
+            </div>
+            <img src="images/Garlic.png" alt="Сармис">
+            
+        </div>
+
+        <div class="product">
+            <img src="images/bagro.jpg" alt="Нөөшилсөн ногоо">
+            <div class="details">
+                <h2>Нөөшилсөн ногоо: 25гр</h2>
+                <p>MNS 5075:2001 стандартын шаардлагыг хангасан байна</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let startX = 0;
+        let startY = 0;
+    
+        document.addEventListener('touchstart', function(e) {
+          const touch = e.touches[0];
+          startX = touch.screenX;
+          startY = touch.screenY;
+        }, false);
+    
+        document.addEventListener('touchend', function(e) {
+          const touch = e.changedTouches[0];
+          const endX = touch.screenX;
+          const endY = touch.screenY;
+    
+          const diffX = endX - startX;
+          const diffY = endY - startY;
+    
+          if (Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX > 50) { 
+              history.back(); 
+            }
+          }
+        }, false);
+      </script>
+</body>
+</html>

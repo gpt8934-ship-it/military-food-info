@@ -4,94 +4,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Military Greeting Page</title>
+
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
-      background: url('images/back.png') no-repeat center center/cover;
-      color: #fff;
+      text-align: center;
+      color: #333;
+      background: #000;
     }
 
-    .overlay {
-      background: rgba(0,0,0,0.55);
+    .container {
       width: 100%;
-      min-height: 100vh;
+      height: 100vh;
+      max-width: 420px;
+      margin: 0 auto;
       padding: 20px;
+      background: url('images/back.png') center/cover no-repeat;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    /* ЛОГО + ГАРЧИГ ЯГ ДЭЭР БАЙХ */
+    .top-section {
+      width: 100%;
+      padding-top: 20px;
       text-align: center;
     }
 
     .logo {
-      width: 30%;
-      max-width: 140px;
-      margin-top: 20px;
+      width: 110px;
+      margin-bottom: 10px;
     }
 
     h1 {
-      font-size: 5vw;
-      max-width: 320px;
-      margin: 20px auto;
-      line-height: 1.4;
+      font-size: 16px;
       font-weight: bold;
-      text-shadow: 1px 1px 3px #000;
+      line-height: 1.4;
+      color: #fff;
+      margin: 0;
+      text-shadow: 0 0 6px rgba(0,0,0,0.7);
     }
 
+    /* description текст */
     .description {
-      max-width: 340px;
-      font-size: 4vw;
-      line-height: 1.5;
-      text-shadow: 1px 1px 3px #000;
-      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #fff;
+      margin-top: auto;
+      margin-bottom: 30px;
+      padding: 0 20px;
+      text-shadow: 0 0 4px rgba(0,0,0,0.9);
     }
 
+    /* ЭХЛЭХ товч */
     .start-button {
-      width: 80%;
-      max-width: 260px;
-      padding: 14px;
       background-color: #0066cc;
       border: none;
-      border-radius: 28px;
-      font-size: 5vw;
+      border-radius: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
       color: white;
       font-weight: bold;
-      margin: 30px 0;
       cursor: pointer;
+      margin-bottom: 40px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      transition: 0.2s;
     }
 
     .start-button:hover {
-      background-color: #1a7be0;
+      background-color: #1a7ee0;
+      transform: translateY(-2px);
     }
 
-    /* Small screens (mobile) */
-    @media (max-width: 480px) {
-      h1 { font-size: 18px; }
-      .description { font-size: 14px; }
-      .start-button { font-size: 16px; }
-    }
   </style>
 </head>
+
 <body>
-  <div class="overlay">
-    <img src="images/logo.png" class="logo">
-    
-    <h1>“ЦЭРГИЙН ГАВЬЯАНЫ УЛААН ТУГИЙН ОДОН”-Т 310 ДУГААР АНГИ</h1>
+  <div class="container">
+
+    <!-- ЛОГО + ГАРЧИГ ХАМГИЙН ДЭЭР -->
+    <div class="top-section">
+      <img src="images/logo.png" class="logo">
+      <h1>“ЦЭРГИЙН ГАВЬЯАНЫ УЛААН ТУГИЙН<br>ОДОН”-Т 310 ДУГААР АНГИ</h1>
+    </div>
 
     <p class="description">
-      2021 оны 133 дугаар тогтоолоор батлагдсан цэргийн жинхэнэ болон гэрээт алба хаагчдын 
-      хүнсний хоногийн нормыг танилцуулж байна.
+      Монгол Улсын засгийн газрын 2021 оны 133 дугаар тогтоолоор батлагдсан Цэргийн
+      жинхэнэ албаны байлдагч, түрүүч, сонсогч болон гэрээт цэргийн алба хаагчдын хүнсний
+      хоногийн нормыг танилцуулж байна.
     </p>
 
     <button class="start-button" onclick="redirectToMenu()">ЭХЛЭХ</button>
-  </div>
 
-  <script>
-    function redirectToMenu() {
-      window.location.href = 'description.html';
-    }
-  </script>
+    <script>
+      function redirectToMenu() {
+        window.location.href = 'description.html';
+      }
+    </script>
+
+  </div>
 </body>
 </html>
